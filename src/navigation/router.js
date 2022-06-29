@@ -1,24 +1,88 @@
-// import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useRef } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import SlashComponent from "../Components/allComponents/slashComponent";
+import Careers from "../../src/Components/careers/careers";
+import CareersDetailPage from "../Components/careers/careersDetailPage";
+import Header from "../Components/Header/Header";
+import Footer from "../Components/Footer/Footer";
+import PortfolioDetailPage from "../Components/portfolio/portfolioDetailPage";
 
-// import Header from "../../src/Components/Header/Header";
-// import Home from "../../src/Components/Home/Home";
-// import Features from "../../src/Components/Features/Features";
-// import Updates from "../../src/Components/Updates/Updates";
-// import BigFeatures from "../../src/Components/BigFeatures/BigFeatures";
-// import Pricing from "../../src/Components/Pricing/Pricing";
-// import Testimonial from "../../src/Components/Testimonial/Testimonial";
-// import BrandArea from "../../src/Components/BrandArea/BrandArea";
-// import ImpressArea from "../../src/Components/ImpressArea/ImpressArea";
-// import Footer from "../../src/Components/Footer/Footer";
+const WrappeHeaderFooter = (Child) => {
+  const homeRef = useRef();
+  const servicesRef = useRef();
+  const portfolioRef = useRef();
+  const contactUsRef = useRef();
 
-// function Router() {
-//   return (
-//     <BrowserRouter>
-//       <Routes>
-//         <Route path="/" element={<Header />} />
-//         <Route path="/" element={<Home />} />
-//       </Routes>
-//     </BrowserRouter>
-//   );
-// }
-// export default Router;
+  const careersRef = useRef();
+
+  const navHeader = [
+    {
+      headerTitle: "HOME",
+      headerRef: homeRef,
+      headerID: "home",
+      route: "/",
+    },
+    {
+      headerTitle: "SERVICES",
+      headerRef: servicesRef,
+      headerID: "services",
+      route: "/",
+    },
+    {
+      headerTitle: "PORTFOLIO",
+      headerRef: portfolioRef,
+      headerID: "portfolio",
+      route: "/",
+    },
+    {
+      headerTitle: "CONTACT",
+      headerRef: contactUsRef,
+      headerID: "contactUs",
+      route: "/",
+    },
+   
+    {
+      headerTitle: "CAREERS",
+      headerRef: careersRef,
+      headerID: "careers",
+      route: "/careers",
+    },
+  ];
+
+  return (
+    <>
+      <Header navHeader={navHeader} />
+      <div>
+        <Child
+          references={{
+            homeRef,
+            contactUsRef,
+            servicesRef,
+            portfolioRef,
+          }}
+        />
+      </div>
+      <Footer />
+    </>
+  );
+};
+
+function Router() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={WrappeHeaderFooter(SlashComponent)} />
+        <Route path="/careers" element={WrappeHeaderFooter(Careers)} />
+        <Route
+          path="/careersDetail"
+          element={WrappeHeaderFooter(CareersDetailPage)}
+        />
+        <Route
+          path="/portfolioDetail"
+          element={WrappeHeaderFooter(PortfolioDetailPage)}
+        />
+      </Routes>
+    </BrowserRouter>
+  );
+}
+export default Router;

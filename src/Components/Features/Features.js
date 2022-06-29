@@ -27,7 +27,7 @@ function Features() {
             <div className="left_features">
               <img
                 className="img-fluid"
-                src={require("../../img/SDLC.png")}
+                src={require("../../img/Sdlc.png")}
                 alt=""
               
               />

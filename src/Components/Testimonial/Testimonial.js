@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import Updates from "../Updates/Updates";
+import Updates from "../services/services";
 
 function Testimonial() {
   const [stateValue, setStateValue] = useState(0);
@@ -11,12 +11,12 @@ function Testimonial() {
   };
 
   return (
-    <div className="section_gap_top testimonial_area">
-      <div className="container">
+    // <div className="section_gap_top testimonial_area">
+      <div className="container" style={{paddingTop: 80}}>
         <div className="row justify-content-center">
           <div className="col-lg-8 text-center">
             <div className="main_title">
-              <p className="top_title">User Feedback</p>
+              {/* <p className="top_title">User Feedback</p> */}
               <h2>What Our Clients Say About Us</h2>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
@@ -52,7 +52,7 @@ function Testimonial() {
               <Carousel autoPlay={true} selectedItem={stateValue}>
                 <div className="single_testimonial">
                   <div className="testimonial_head">
-                    <img src={require("../../img/quote.png")} alt="" />
+                    <img src={require("../../img/quote.png")} alt="" style={{width: "20%"}}/>
                     <h4>Fanny Spencer</h4>
                     <div className="review">
                       <i className="fa fa-star"></i>
@@ -73,7 +73,7 @@ function Testimonial() {
                 <div></div>
                 <div className="single_testimonial">
                   <div className="testimonial_head">
-                    <img src={require("../../img/quote.png")} alt="" />
+                    <img src={require("../../img/quote.png")} alt="" style={{width: "20%"}}/>
 
                     <h4>Fanny Spencer</h4>
                     <div className="review">
@@ -94,7 +94,7 @@ function Testimonial() {
                 </div>
                 <div className="single_testimonial">
                   <div className="testimonial_head">
-                    <img src={require("../../img/quote.png")} alt="" />
+                    <img src={require("../../img/quote.png")} alt="" style={{width: "20%"}} />
 
                     <h4>Fanny Spencer</h4>
                     <div className="review">
@@ -115,7 +115,7 @@ function Testimonial() {
                 </div>
                 <div className="single_testimonial">
                   <div className="testimonial_head">
-                    <img src={require("../../img/quote.png")} alt="" />
+                    <img src={require("../../img/quote.png")} alt="" style={{width: "20%"}}/>
 
                     <h4>Fanny Spencer</h4>
                     <div className="review">
@@ -139,7 +139,7 @@ function Testimonial() {
           </div>
         </div>
       </div>
-    </div>
+    // </div>
   );
 }
 

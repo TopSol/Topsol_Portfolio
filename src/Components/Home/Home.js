@@ -4,6 +4,7 @@ import bannerImage from "../../img/banner/home-banner.png";
 function Home() {
   return (
     <section
+    id="home"
       className="home_banner_area"
       style={{ backgroundImage: "url(" + bannerImage + ")" }}
     >

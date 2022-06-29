@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import tabBG from "../../../src/img/tab-bg.jpg";
-function Updates() {
+function Services() {
   const [selectService, setSelectService] = useState(1);
 
   const updateService = (val) => {
@@ -9,6 +10,7 @@ function Updates() {
 
   return (
     <section
+      id="services"
       className="recent_update_area"
       style={{ backgroundImage: "url(" + tabBG + ")" }}
     >
@@ -31,6 +33,7 @@ function Updates() {
                 aria-controls="home"
                 aria-selected="true"
                 onClick={() => updateService(1)}
+                style={{ cursor: "pointer" }}
               >
                 <span className="lnr lnr-screen"></span>
                 <h6>Web Development</h6>
@@ -46,6 +49,7 @@ function Updates() {
                 aria-controls="profile"
                 aria-selected="false"
                 onClick={() => updateService(2)}
+                style={{ cursor: "pointer" }}
               >
                 <span className="lnr lnr-screen"></span>
                 <h6>App Development</h6>
@@ -61,6 +65,7 @@ function Updates() {
                 aria-controls="contact"
                 aria-selected="false"
                 onClick={() => updateService(3)}
+                style={{ cursor: "pointer" }}
               >
                 <span className="lnr lnr-screen"></span>
                 <h6>BlockChain</h6>
@@ -76,9 +81,42 @@ function Updates() {
                 aria-controls="contact"
                 aria-selected="false"
                 onClick={() => updateService(4)}
+                style={{ cursor: "pointer" }}
               >
                 <span className="lnr lnr-screen"></span>
                 <h6>WordPress</h6>
+              </div>
+            </li>
+            <li className="nav-item">
+              <div
+                className={`nav-link ${selectService === 5 && "active"}`}
+                id="contact-tab"
+                data-toggle="tab"
+                href="#contact"
+                role="tab"
+                aria-controls="contact"
+                aria-selected="false"
+                onClick={() => updateService(5)}
+                style={{ cursor: "pointer" }}
+              >
+                <span className="lnr lnr-screen"></span>
+                <h6>Digital Markiting</h6>
+              </div>
+            </li>
+            <li className="nav-item">
+              <div
+                className={`nav-link ${selectService === 6 && "active"}`}
+                id="contact-tab"
+                data-toggle="tab"
+                href="#contact"
+                role="tab"
+                aria-controls="contact"
+                aria-selected="false"
+                onClick={() => updateService(6)}
+                style={{ cursor: "pointer" }}
+              >
+                <span className="lnr lnr-screen"></span>
+                <h6>DevOps</h6>
               </div>
             </li>
           </ul>
@@ -93,7 +131,7 @@ function Updates() {
                 <div className="row recent_update_text align-items-center">
                   <div className="col-lg-5">
                     <div className="common_style">
-                      <p className="line">Modern Daesign Trends</p>
+                      {/* <p className="line">Modern Daesign Trends</p> */}
                       <h3>
                         Web App Development
                         {/* <br /> Inner beauty Lasts Long */}
@@ -105,9 +143,9 @@ function Updates() {
                         quality web applications for you that maximize resource
                         utilization at a low cost.
                       </p>
-                      <a className="primary_btn" href="#">
+                      <Link className="primary_btn" to="/servicesDetail">
                         <span>Learn More</span>
-                      </a>
+                      </Link>
                     </div>
                   </div>
                   <div className="col-lg-6 text-right">
@@ -133,9 +171,9 @@ function Updates() {
                 <div className="row recent_update_text align-items-center">
                   <div className="col-lg-5">
                     <div className="common_style">
-                      <p className="line">Modern Daesign Trends</p>
+                      {/* <p className="line">Modern Daesign Trends</p> */}
                       <h3>
-                        Mobile App Development​
+                        Mobile App Development
                         {/* <br /> Inner beauty Lasts Long */}
                       </h3>
                       <p>
@@ -147,9 +185,9 @@ function Updates() {
                         to details as per customer specifications to develop
                         final product.
                       </p>
-                      <a className="primary_btn" href="#">
+                      <Link className="primary_btn" to="/servicesDetail">
                         <span>Learn More</span>
-                      </a>
+                      </Link>
                     </div>
                   </div>
                   <div className="col-lg-6 text-right">
@@ -175,7 +213,7 @@ function Updates() {
                 <div className="row recent_update_text align-items-center">
                   <div className="col-lg-5">
                     <div className="common_style">
-                      <p className="line">Modern Daesign Trends</p>
+                      {/* <p className="line">Modern Daesign Trends</p> */}
                       <h3>
                         Block Chain Development
                         {/* <br /> Inner beauty Lasts Long */}
@@ -188,9 +226,9 @@ function Updates() {
                         authentication using Ethereum, NEM, Stellar and other
                         prevalent technologies.
                       </p>
-                      <a className="primary_btn" href="#">
+                      <Link className="primary_btn" to="/servicesDetail">
                         <span>Learn More</span>
-                      </a>
+                      </Link>
                     </div>
                   </div>
                   <div className="col-lg-6 text-right">
@@ -216,7 +254,7 @@ function Updates() {
                 <div className="row recent_update_text align-items-center">
                   <div className="col-lg-5">
                     <div className="common_style">
-                      <p className="line">Modern Daesign Trends</p>
+                      {/* <p className="line">Modern Daesign Trends</p> */}
                       <h3>
                         WordPress Development
                         {/* <br /> Inner beauty Lasts Long */}
@@ -228,16 +266,94 @@ function Updates() {
                         develop high-performing and easy-to-manage WordPress
                         websites for clients with better business results.
                       </p>
-                      <a className="primary_btn" href="#">
+                      <Link className="primary_btn" to="/servicesDetail">
                         <span>Learn More</span>
-                      </a>
+                      </Link>
                     </div>
                   </div>
                   <div className="col-lg-6 text-right">
                     <div className="chart_img">
                       <img
                         className="img-fluid"
-                        src={require("../../img/wordpress.jpg")}
+                        src={require("../../img/wordpress")}
+                        alt="chartImage"
+                        style={{ width: "90%" }}
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+            {selectService === 5 && (
+              <div
+                className="tab-pane fade show active"
+                id="home"
+                role="tabpanel"
+                aria-labelledby="home-tab"
+              >
+                <div className="row recent_update_text align-items-center">
+                  <div className="col-lg-5">
+                    <div className="common_style">
+                      {/* <p className="line">Modern Design Trends</p> */}
+                      <h3>
+                        Digital Marketing
+                        {/* <br /> Inner beauty Lasts Long */}
+                      </h3>
+                      <p>
+                        We have a wealth of global marketing and e-commerce
+                        experience to take your brand across borders. Let's open
+                        up to new markets together.
+                      </p>
+                      <Link className="primary_btn" to="/servicesDetail">
+                        <span>Learn More</span>
+                      </Link>
+                    </div>
+                  </div>
+                  <div className="col-lg-6 text-right">
+                    <div className="chart_img">
+                      <img
+                        className="img-fluid"
+                        src={require("../../img/digitalMarketing.jpeg")}
+                        alt="chartImage"
+                        style={{ width: "90%" }}
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+            {selectService === 6 && (
+              <div
+                className="tab-pane fade show active"
+                id="home"
+                role="tabpanel"
+                aria-labelledby="home-tab"
+              >
+                <div className="row recent_update_text align-items-center">
+                  <div className="col-lg-5">
+                    <div className="common_style">
+                      {/* <p className="line">Modern Daesign Trends</p> */}
+                      <h3>
+                        DevOps
+                        {/* <br /> Inner beauty Lasts Long */}
+                      </h3>
+                      <p>
+                        We provide carving digital solutions from their
+                        conceptualization to deployment, data migration, API
+                        integrations, and plugin development with dexterity. We
+                        develop high-performing and easy-to-manage WordPress
+                        websites for clients with better business results.
+                      </p>
+                      <Link className="primary_btn" to="/servicesDetail">
+                        <span>Learn More</span>
+                      </Link>
+                    </div>
+                  </div>
+                  <div className="col-lg-6 text-right">
+                    <div className="chart_img">
+                      <img
+                        className="img-fluid"
+                        src={require("../../img/devops-faq-1.jpg")}
                         alt="chartImage"
                         style={{ width: "90%" }}
                       />
@@ -252,4 +368,4 @@ function Updates() {
     </section>
   );
 }
-export default Updates;
+export default Services;
